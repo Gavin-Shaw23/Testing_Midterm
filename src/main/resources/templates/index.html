@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+
+    <h1>Welcome to Assignment 3 (aka Midterm)</h1>
+
+
+    <div th:unless="${array.empty}">
+        <h2>User Added Successfully</h2>
+    </div>
+    <form action="#" th:action="@{/login}" method="post" th:object="${user}">
+
+        Username: <input type="text" th:field="*{name}" th:required="required"><br>
+        Password: <input type="password" th:field="*{password}" th:required="required"><br>
+        <input type="submit" value="Submit"><br>
+    </form><br>
+
+    <a href="/register">Register New User</a>
+</body>
+</html>
+
